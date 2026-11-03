@@ -17,7 +17,6 @@ I considered how the timetable was already being used and kept important visual 
 - Separate columns for different dates
 - Event information displayed directly on the timetable
 
-
 ## Features
 
 - Select two dates for the timetable
@@ -39,6 +38,7 @@ I considered how the timetable was already being used and kept important visual 
 - Keep selected dates after refreshing the page
 - Update event dates when the timetable dates are changed
 - Reset all saved events and dates
+- PDF format for printing
 
 ## Tech Stack
 
@@ -47,6 +47,12 @@ I considered how the timetable was already being used and kept important visual 
 - Vite
 - Tailwind CSS
 - Browser `localStorage`
+
+### Testing
+
+- Created and executed 34 manual test cases using Excel.
+- Tested date selection, event creation, input validation, event deletion, and PDF printing.
+- Documented test results and identified areas for improvement.
 
 ## What I Learned
 

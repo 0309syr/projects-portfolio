@@ -250,8 +250,24 @@ function App() {
      * - Reset the input form to default.
      */
 
-    if (!times.includes(event.start)) {
+    if (!times.includes(event.start) || !times.includes(event.end)) {
       alert("無効な時間です。");
+      return;
+    }
+
+    //Check time validation
+    const existingEvent = events.find(
+      (existEvent) =>
+        existEvent.start === event.start && existEvent.date === event.date,
+    );
+
+    console.log("New event:", event);
+    console.log("Existing events:", events);
+    console.log("New date:", event.date);
+    console.log("New start:", event.start);
+
+    if (existingEvent) {
+      alert("この時間帯には既にイベントが登録されています。");
       return;
     }
 
@@ -304,7 +320,14 @@ function App() {
         </div>
         <button
           className="mt-6 w-full rounded-xl bg-gray-800 px-6 py-3 text-white font-medium shadow-sm transition hover:bg-gray-700 hover:shadow-md active:scale-95"
-          onClick={changeDates}
+          onClick={() => {
+            if (date1 == "" || date2 == "") {
+              alert("日付が選択されていません");
+              return;
+            } else {
+              changeDates();
+            }
+          }}
         >
           Create
         </button>
@@ -360,6 +383,7 @@ function App() {
               }}
               className="border rounded w-40"
             >
+              <option value="">Choose date</option>
               <option value={date1}>{date1}</option>
               <option value={date2}>{date2}</option>
             </select>
