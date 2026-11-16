@@ -350,9 +350,9 @@ function App() {
           <h1 className="mb-20">{date1.slice(5, 7)}月テニスイベント</h1>
         </div>
         {/*input form*/}
-        <div className="no-print grid grid-cols-2 gap-4 m-8 bg-gray-50">
+        <div className="no-print grid grid-cols-2 gap-x-8 gap-y-4 max-w-3xl mx-auto my-8 p-6 bg-gray-50">
           <div className="flex items-center">
-            <label className="w-50">Coach: </label>
+            <label className="w-24 shrink-0">Coach: </label>
             <input
               className="border rounded-4xl w-40"
               name="coach"
@@ -361,7 +361,7 @@ function App() {
             />
           </div>
           <div className="flex items-center">
-            <label className="w-50">Level: </label>
+            <label className="w-24 shrink-0">Level: </label>
             <select
               name="level"
               value={event.level}
@@ -375,7 +375,7 @@ function App() {
             </select>
           </div>
           <div className="flex items-center">
-            <label className="w-50">Date: </label>
+            <label className="w-24 shrink-0">Date: </label>
             <select
               value={event.date}
               onChange={(e) => {
@@ -389,7 +389,7 @@ function App() {
             </select>
           </div>
           <div className="flex items-center">
-            <label className="w-50">Time: </label>
+            <label className="w-24 shrink-0">Time: </label>
             <input
               className="border rounded-4xl w-20"
               type="time"
@@ -407,7 +407,7 @@ function App() {
             />
           </div>
           <div className="flex items-center">
-            <label className="w-50">Hours:</label>
+            <label className="w-24 shrink-0">Hours:</label>
             <input
               className="border rounded-4xl w-40"
               name="hours"
@@ -416,7 +416,7 @@ function App() {
             />
           </div>
           <div className="flex items-center">
-            <label className="w-50">Comment: </label>
+            <label className="w-24 shrink-0">Comment: </label>
             <input
               className="border rounded-4xl"
               name="comment"
@@ -425,18 +425,18 @@ function App() {
             />
           </div>
           <div className="flex items-center">
-            <label className="w-50">Limit(半角): </label>
+            <label className="w-24 shrink-0">Limit(半角): </label>
             <input
-              className="border rounded-4xl"
+              className="border rounded-4xl w-40"
               name="limit"
               value={event.limit}
               onChange={handleChange}
             />
           </div>
           <div className="flex items-center">
-            <label className="w-50">Price: </label>
+            <label className="w-24 shrink-0">Price: </label>
             <input
-              className="border rounded-4xl"
+              className="border rounded-4xl w-40"
               name="price"
               value={event.price}
               onChange={handleChange}
@@ -449,36 +449,36 @@ function App() {
             Add
           </button>
         </div>
-        <div className="flex">
-          <div className="w-150 center">
+        <div className="flex w-full max-w-3xl mx-auto">
+          <div className="w-1/2 text-center">
             <h2>
               {date1.slice(5, 7)}/{date1.slice(8, 10)}
             </h2>
           </div>
-          <div className="w-150 center">
+          <div className="w-1/2 text-center">
             <h2>
               {date2.slice(5, 7)}/{date2.slice(8, 10)}
             </h2>
           </div>
         </div>
 
-        <div className="flex">
-          {/*time*/}
-          <div className="flex flex-col w-20 text-left ml-10">
-            {times.map((time) => (
-              <div className="h-18" key={time}>
-                {time}
-              </div>
-            ))}
-          </div>
-          {/*event cards for Date1*/}
+        <div className="w-full max-w-3xl mx-auto">
           <div className="flex">
+            {/*time*/}
+            <div className="flex flex-col w-25 shrink-0 text-center">
+              {times.map((time) => (
+                <div className="h-18" key={time}>
+                  {time}
+                </div>
+              ))}
+            </div>
+            {/*event cards for Date1*/}
             <EventTimeLine
               sortedEvents={sortedDate1Events}
               times={times}
               deleteEvent={deleteEvent}
             />
-            <div className="ml-45 flex flex-col w-20 text-left">
+            <div className="ml-10 flex flex-col w-25 shrink-0 text-center">
               {times.map((time) => (
                 <div className="h-18" key={time}>
                   {time}
@@ -486,11 +486,13 @@ function App() {
               ))}
             </div>
             {/*event cards for Date2*/}
-            <EventTimeLine
-              sortedEvents={sortedDate2Events}
-              times={times}
-              deleteEvent={deleteEvent}
-            />
+            <div>
+              <EventTimeLine
+                sortedEvents={sortedDate2Events}
+                times={times}
+                deleteEvent={deleteEvent}
+              />
+            </div>
           </div>
         </div>
         <div>

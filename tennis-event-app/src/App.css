@@ -1,6 +1,11 @@
 @media print {
+  .schedule-grid {
+    margin-left: 0 !important;
+    justify-content: center !important;
+  }
+
   @page {
-    size: A4 portrate;
+    size: A4 portrait;
     margin: 10mm;
   }
 
