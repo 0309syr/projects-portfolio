@@ -4,7 +4,7 @@ A simple interactive quiz application built with React and TypeScript. Users can
 
 ## Demo
 
-**Live Demo:** Coming soon
+**Live Demo:** - [Live Demo](https://quiz-app-eight-kappa-17.vercel.app/)
 
 **GitHub:** https://github.com/0309syr/quiz-app
 
