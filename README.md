@@ -4,11 +4,17 @@ This repository contains three personal projects I developed while learning web 
 
 ## 1. Tennis Event App
 
+- [Live Demo](https://tennis-event-app.vercel.app/)
+- [Source Code](./tennis-event-app)
+
 **Technologies:** React, TypeScript, Tailwind CSS
 
 A web application for managing tennis event schedules. Features include event creation with input validation, a timeline view based on event start times and durations, event deletion, and print-friendly layouts.
 
 ## 2. Quiz App
+
+- [Live Demo](https://quiz-app-eight-kappa-17.vercel.app/)
+- [Source Code](./quiz-app)
 
 **Technologies:** React, TypeScript, Tailwind CSS
 
